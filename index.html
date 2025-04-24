@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Table Manager</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/table-styles.css">
+</head>
+<body>
+    <header>
+        <h1>Project Table Manager</h1>
+    </header>
+
+    <main>
+        <!-- Project Selector Section -->
+        <section id="project-selector-section">
+            <div class="search-container">
+                <label for="project-search">Project ID:</label>
+                <input type="text" id="project-search" placeholder="Enter 7-digit project ID" maxlength="7" pattern="\d{7}">
+                <div id="project-suggestions" class="suggestions-container"></div>
+                <button id="load-project-btn">Load Project</button>
+                <span id="project-not-found" class="error-message hidden">Project not found</span>
+            </div>
+        </section>
+
+        <!-- Project Table Section -->
+        <section id="project-table-section" class="hidden">
+            <div class="project-header">
+                <h2>Project: <span id="current-project-id"></span></h2>
+                <div class="table-actions">
+                    <button id="add-entry-btn">Add New</button>
+                    <button id="export-btn">Export</button>
+                    <div class="export-options hidden" id="export-options">
+                        <button data-format="csv">CSV</button>
+                        <button data-format="json">JSON</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filter Controls -->
+            <div class="filter-controls">
+                <div id="filter-container"></div>
+                <button id="apply-filters-btn">Apply Filters</button>
+                <button id="clear-filters-btn">Clear Filters</button>
+            </div>
+
+            <!-- Table Container -->
+            <div class="table-container">
+                <table id="entries-table">
+                    <thead id="table-header">
+                        <!-- Table headers will be generated dynamically -->
+                    </thead>
+                    <tbody id="table-body">
+                        <!-- Table rows will be generated dynamically -->
+                    </tbody>
+                </table>
+                <div id="no-entries-message" class="hidden">No entries found</div>
+            </div>
+        </section>
+
+        <!-- Entry Form Modal -->
+        <div id="entry-form-modal" class="modal hidden">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="form-title">Add New Entry</h3>
+                    <span class="close-modal">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <form id="entry-form">
+                        <!-- Form fields will be generated dynamically -->
+                        <div id="form-fields"></div>
+                        <div class="form-actions">
+                            <button type="button" id="cancel-btn">Cancel</button>
+                            <button type="submit" id="save-btn" disabled>Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Project Table Manager</p>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="js/app.js" type="module"></script>
+</body>
+</html>
