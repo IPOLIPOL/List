@@ -1,0 +1,108 @@
+/* Table Styles */
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+    cursor: pointer;
+    position: sticky;
+    top: 0;
+}
+
+th:hover {
+    background-color: #e0e0e0;
+}
+
+th.sorted-asc::after {
+    content: " ↑";
+}
+
+th.sorted-desc::after {
+    content: " ↓";
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.table-actions-cell {
+    white-space: nowrap;
+    width: 1%;
+}
+
+.action-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 5px;
+    padding: 5px;
+    color: #333;
+}
+
+.edit-btn:hover {
+    color: #4CAF50;
+}
+
+.delete-btn:hover {
+    color: #f44336;
+}
+
+#no-entries-message {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+    font-style: italic;
+}
+
+/* Status and risk rating colors */
+.status-open {
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+.status-closed {
+    color: #f44336;
+    font-weight: bold;
+}
+
+.risk-high {
+    background-color: #ffebee;
+    color: #d32f2f;
+}
+
+.risk-medium {
+    background-color: #fff8e1;
+    color: #ff8f00;
+}
+
+.risk-low {
+    background-color: #e8f5e9;
+    color: #388e3c;
+}
+
+/* Responsive table */
+@media screen and (max-width: 768px) {
+    .table-container {
+        overflow-x: auto;
+    }
+    
+    table {
+        min-width: 600px;
+    }
+}
