@@ -1,6 +1,8 @@
 # List
 https://ipolipol.github.io/List/
 
+```mermaid
+
 flowchart TD
     %% --- User Interface Layer ---
     subgraph User Interface
