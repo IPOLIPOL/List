@@ -5,7 +5,7 @@ https://ipolipol.github.io/List/
 
 flowchart TD
     %% --- User Interface Layer ---
-    subgraph User Interface
+    subgraph "User Interface"
         A[Home Page] --> B[Project Selector]
         B --> C{Project Exists?}
         C -->|Yes| D[Project Table View]
@@ -18,9 +18,8 @@ flowchart TD
         F --> K[Entry Form]
         K --> L[Save Entry]
     end
-
     %% --- Data Layer ---
-    subgraph Data Layer
+    subgraph "Data Layer"
         M[(LocalStorage)] --- N[Project Registry]
         M --- O[Project Data]
         N <--> B
@@ -29,17 +28,15 @@ flowchart TD
         H --> U
         G --> U
         U --> O
-        J <-- O
+        J --- O
     end
-
     %% --- Components / Modules ---
-    subgraph Components
+    subgraph "Components"
         P[Project Registry Manager]
         Q[Data Entry Form]
         R[Table Renderer]
         S[Filter/Sort Engine]
         T[Export Module]
-
         P <--> N
         Q <--> K
         Q --> L
@@ -50,7 +47,6 @@ flowchart TD
         S <--> I
         T <--> J
     end
-
     %% --- Connections Between UI and Components ---
     B --> P
 
