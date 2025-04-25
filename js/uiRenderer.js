@@ -448,7 +448,7 @@ export function initUIRenderer(appConfig) {
     }
     
     // Initialize
-    setupEventListeners();
+   // setupEventListeners();
     
     // Return public methods
     return {
@@ -456,6 +456,7 @@ export function initUIRenderer(appConfig) {
         renderTable,
         showEntryForm,
         updateTableRow,
-        setCurrentProject
+        setCurrentProject,
+        setupEventListeners 
     };
 }
