@@ -53,6 +53,7 @@ function initApp() {
     const projectManager = initProjectManager();
     const entryManager = initEntryManager();
     const uiRenderer = initUIRenderer(appConfig);
+    uiRenderer.setupEventListeners(); 
     const filterSortEngine = initFilterSortEngine(appConfig);
     const exportModule = initExportModule();
     
