@@ -129,6 +129,7 @@ function initProjectSelector(projectManager, entryManager, uiRenderer) {
         document.getElementById('project-table-section').classList.remove('hidden');
         
         // Render the table with project data
+        uiRenderer.setCurrentProject(projectId);
         uiRenderer.renderTable(projectData.entries);
     }
     
